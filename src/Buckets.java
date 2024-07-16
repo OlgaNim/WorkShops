@@ -1,9 +1,7 @@
 public class Buckets {
     public static boolean isValid(String s) {
-        int count1 = 0;
-        int count2 = 0;
-        int count3 = 0;
-        boolean answ = true;
+        int count1 = 0; int count2 = 0; int count3 = 0;
+
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '(') {count1 += count1;}
             else if (s.charAt(i) == ')') {count1 -= count1;}
@@ -11,6 +9,10 @@ public class Buckets {
             else if (s.charAt(i) == ']') {count2 -= count2;}
             else if (s.charAt(i) == '{') {count3 += count3;}
             else if (s.charAt(i) == '}') {count3 -= count3;}
+
+            if (count1  < 0 || count2 < 0 || count3 < 0) {
+                break;
+            }
         }
         if (count1  == 0 && count2 == 0 && count3 == 0) {
             return true;
