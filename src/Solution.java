@@ -1,9 +1,11 @@
 class Solution {
     public static void reverseString(char[] s) {
         int n = s.length;
-       //char[] d = new char[s.length];
+      // char[] d = new char[s.length];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n/2; i++) {
+
+           // d[n-1-i] = s[i];
 
             var temp = s[n -i -1];
             s[n -i -1] = s[i];
@@ -11,7 +13,7 @@ class Solution {
 
 
         }
-
+        //s = d;
         System.out.println(s);
     }
 
